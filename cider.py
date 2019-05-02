@@ -188,6 +188,7 @@ def main():
     IPAddress = AddressArray.group(1)
     submask = AddressArray.group(2)
     binarysubMask = getSubnetMask(submask)
+    binaryIPAddress = convertToBinaryFormat(IPAddress)
     # Find the IPBlocks Occupied
     # IPBlocks = getIPBlocks(int(submask))
     # subNetMasks(IPBlocks)
@@ -201,8 +202,8 @@ def main():
     print("\tConvert Subnet Mask to Decimal: ", convertToDecimalFormat(binarysubMask, submask))
     print("\tConvert OG to Binary: ", convertToBinaryFormat(IPAddress))
     print("\n\nNow in order to determine the range, aka the Network Address and Broadcast address, \nwe need to compare the Binary Subnet Mask with the Binary Original IP")
-
-
+    print("\n\n")
+    print("SubMask: \n\t", binarysubMask,"\nIP Address:","\n\t", binaryIPAddress)
 
 if __name__ == "__main__":
     main()
